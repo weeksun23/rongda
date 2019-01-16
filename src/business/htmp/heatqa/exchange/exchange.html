@@ -1,0 +1,65 @@
+<div class='tab-pane' :class="{active : show}">
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	  	{{chooseExchange.name}}
+	  	<div class='pull-right heatqa-back' @click="hide">
+	  		<i class='glyphicon glyphicon-log-out'></i>
+	  		返回
+			</div>
+	  </div>
+	  <div class="panel-body">
+	    <p>
+	    	<button class="btn btn-primary btn-sm" type="button">
+				  供热面积 <span class="badge">{{chooseExchange.area}}万㎡</span>
+				</button>
+				<button class="btn btn-success btn-sm" type="button">
+				  总户数 <span class="badge">{{chooseExchange.totalHousing}}</span>
+				</button>
+				<button class="btn btn-default btn-sm" type="button">
+				  室温监测户数 <span class="badge">{{chooseExchange.roomTempHouses}}</span>
+				</button>
+				<span class="label label-danger">超高温:{{chooseExchange.ultraHighTempStations}}站 | {{chooseExchange.ultraHighTempStations / chooseExchange.totalHousing | percent}}</span>
+		  	<span class="label label-warning">高温:{{chooseExchange.highTempStations}}站 | {{chooseExchange.highTempStations / chooseExchange.totalHousing | percent}}</span>
+		  	<span class="label label-primary">常温:{{chooseExchange.normalTempStation}}站 | {{chooseExchange.normalTempStation / chooseExchange.totalHousing | percent}}</span>
+		  	<span class="label label-info">低温:{{chooseExchange.lowTempStation}}站 | {{chooseExchange.lowTempStation / chooseExchange.totalHousing | percent}}</span>
+	    </p>
+	    <form class="form-inline">
+	    	<div class="form-group">
+			    <label>小区</label>
+			    <select class="form-control">
+			    	<option>XXX小区1</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label>楼栋</label>
+			    <select class="form-control">
+			    	<option>XXX楼栋1</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label>欠费状态</label>
+			    <select class="form-control">
+			    	<option>欠费</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label>用暖状态</label>
+			    <select class="form-control">
+			    	<option>XXXX</option>
+			    </select>
+			  </div>
+			  <button type="button" class="btn btn-primary"><i class='glyphicon glyphicon-search'></i> 查询</button>
+	    </form>
+	    <div class='heatqa-userhome'>
+	    	<div class="panel pull-left" :class="['panel-' + el.cls]" v-for="el in roomData">
+				  <div class="panel-heading">{{el.number}}</div>
+				  <div class='panel-body'>
+				  	<span :style="{color : el.color}">{{el.houseTemp}}℃ </span>
+				  	<span :style="{color : el.oweColor}">{{el.oweStatusTxt}}</span>
+				  	<span :style="{color : el.heatColor}">{{el.heatStatusTxt}}</span>
+				  </div>
+				</div>
+		  </div>
+		</div>
+	</div>
+</div>

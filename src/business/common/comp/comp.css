@@ -1,0 +1,22 @@
+.comp-mes{color: #636363;word-break:break-all}
+.comp-btns{
+	text-align: center;margin-top: .3rem;
+}
+.comp-btns span{
+	width: 100%;
+}
+.comp-btns .box-flex:first-child{
+	padding-right: .08rem;
+}
+.comp-btns .box-flex:last-child{
+	padding-left: .08rem;
+}
+.comp-btns .comp-single-btn{
+	padding-left: 0;
+}
+.comp-btns .comp-single-btn span{
+	width: 45%;
+}
+.comp-btns .box-flex.comp-single-btn{
+	padding: 0;
+}

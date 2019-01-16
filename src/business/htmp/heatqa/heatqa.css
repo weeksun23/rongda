@@ -1,0 +1,16 @@
+.heatqa .nav{padding-left: 5px;padding-top: 5px;border-left: 1px solid #ddd}
+.heatqa .tab-pane{padding: 10px;}
+.heatqa-sum{margin-top: 10px;}
+.heatqa-nav-left{padding: 0 5px;}
+.heatqa-back{cursor: pointer;}
+.heatqa-back:hover{opacity: .5}
+.heatqa-userhome{margin-top: 10px;}
+.heatqa-userhome .panel-heading{padding:5px 15px;text-align: center;}
+.heatqa-userhome .panel{margin-right: 5px;margin-bottom: 5px;}
+.heatqa-userhome .panel-body{padding: 8px;}
+.heatqa-userhome .panel-danger{border-color: #D9534F}
+.heatqa-userhome .panel-danger .panel-heading{background-color: #D9534F;color:#fff;}
+.heatqa-userhome .panel-warning{border-color: #F0AD4E}
+.heatqa-userhome .panel-warning .panel-heading{background-color: #F0AD4E;color:#fff;}
+.heatqa-userhome .panel-info{border-color: #5BC0DE}
+.heatqa-userhome .panel-info .panel-heading{background-color: #5BC0DE;color:#fff;}

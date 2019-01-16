@@ -1,0 +1,11 @@
+import Vue from "vue";
+window.Vue = Vue;
+require("./base");
+require("./ajax");
+require("./toast/toast");
+require("./dialog/vue.dialog");
+require("./accordion/vue.accordion");
+require("./table/vue.table");
+require("./loading/vue.loading");
+require("./datetimepicker/vue.datetimepicker");
+require("./tree/vue.tree");

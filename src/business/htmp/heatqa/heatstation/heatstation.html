@@ -1,0 +1,32 @@
+<div class="tab-pane" :class="{active : show}">
+	<div class="btn-group" data-toggle="buttons">
+	  <label class="btn btn-default" v-for="(el,index) in heatStationData" :class="{active : heatStationIndex === index}" 
+	  	@click="heatStationIndex = index">
+	    <input type="radio" name="options" autocomplete="off" checked> {{el.name}}
+	  </label>
+	</div>
+	<div class='heatqa-sum'>
+		<button class="btn btn-primary btn-sm" type="button">
+		  供热面积 <span class="badge">{{area}}万㎡</span>
+		</button>
+		<button class="btn btn-success btn-sm" type="button">
+		  总户数 <span class="badge">{{totalHousing}}</span>
+		</button>
+		<button class="btn btn-default btn-sm" type="button">
+		  室温监测户数 <span class="badge">{{roomTempHouses}}</span>
+		</button>
+	</div>
+	<div class="panel panel-default mgt10">
+	  <div class="panel-heading">
+	  	<span class='vam'>换热站数据</span>
+	  	<span class="label label-danger">超高温:{{ultraHighTempStations}}站 | {{ultraHighTempStations / heatExchangeStation.length | percent}}</span>
+	  	<span class="label label-warning">高温:{{highTempStations}}站 | {{highTempStations / heatExchangeStation.length | percent}}</span>
+	  	<span class="label label-primary">常温:{{normalTempStation}}站 | {{normalTempStation / heatExchangeStation.length | percent}}</span>
+	  	<span class="label label-info">低温:{{lowTempStation}}站 | {{lowTempStation / heatExchangeStation.length | percent}}</span>
+	  	<span class="label label-default">室温监测:12|50站 15%</span>
+	  </div>
+	  <div class="panel-body">
+	    <v-table :columns="heatStationColumns" ref='heatExchangeStationTb' :pagination='false' :init-page-size='1000' :on-click-td-btn="clickTdBtn"></v-table>
+	  </div>
+	</div>
+</div>
